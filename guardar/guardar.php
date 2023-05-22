@@ -1,13 +1,13 @@
 <?php
-require '../conexiones/alumnos.php';
+require '../crud/conexiones/alumnos.php';
 
 try {
-    $alumno = new Alumnos ($_POST);
-    $resultado = $alumno->guardar();
-    
+    $alumnos = new Alumnos($_POST);
+    $resultado = $alumnos->guardar();
+    var_dump($resultado);
 } catch (PDOException $e) {
     $error = $e->getMessage();
-} catch (Exception $e2){
+} catch (Exception $e2) {
     $error = $e2->getMessage();
 }
 ?>
@@ -25,13 +25,13 @@ try {
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <?php if($resultado): ?>
+                <?php if ($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        FELICIDADES SE GUARDO!!!!!!
+                        ¡FELICIDADES, SE GUARDÓ!
                     </div>
-                <?php else :?>
+                <?php else: ?>
                     <div class="alert alert-danger" role="alert">
-                        OCURRIO UN ERROR: <?= $error ?>
+                        OCURRIÓ UN ERROR: <?= $error ?>
                     </div>
                 <?php endif ?>
               
@@ -39,7 +39,7 @@ try {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/CRUD_MB/formulario/formulario.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/formulario/formulario.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
