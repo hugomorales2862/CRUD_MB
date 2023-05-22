@@ -1,5 +1,5 @@
 <?php
-require '../crud/conexiones/alumnos.php';
+require '../conexiones/alumnos.php';
 
 try {
     $alumnos = new Alumnos($_POST);
@@ -39,7 +39,7 @@ try {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/formulario/formulario.php" class="btn btn-info">Volver al formulario</a>
+                <a href="../../crud/formulario/formulario.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
